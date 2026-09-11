@@ -6,7 +6,7 @@
 
     <title>{{ $title ?? 'Starbucks Coffee' }}</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('images/system-logo.png') }}">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="{{ asset('favicon.svg') }}">
 
     <!-- Google Fonts: Playfair Display (headings) + Lato (body/display) + Inter (UI) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
