@@ -9,7 +9,7 @@
                     Starbucks Coffee
                 </h1>
                 <p class="hidden text-[10px] uppercase tracking-[0.18em] text-text-muted sm:block">
-                    Est. 1971 · Seattle, WA
+                    Laguna, Philippines
                 </p>
             </div>
         </a>
