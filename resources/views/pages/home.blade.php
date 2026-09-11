@@ -528,6 +528,7 @@
                         'Personalised drink profile',
                         'Dedicated barista concierge',
                     ]"
+                    :reserve="true"
                 />
 
             </div>

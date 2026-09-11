@@ -30,6 +30,13 @@
     --color-charcoal:      #2C2C2C;   /* dark card bg */
     --color-ink:           #000000;
 
+    /* ── Brown accent tokens (Reserve tier) ── */
+    --color-walnut:        #4A2C17;   /* dark brown card bg */
+    --color-mocha-dark:    #6B3F1F;   /* medium brown */
+    --color-mocha:         #8B5A2B;   /* warm brown */
+    --color-mocha-light:   #C4956A;   /* light caramel brown */
+    --color-parchment:     #E8DDD0;   /* warm cream border */
+
     /* ── Semantic aliases ── */
     --color-background:    var(--color-cream);
     --color-surface:       var(--color-white);
