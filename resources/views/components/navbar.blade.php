@@ -1,4 +1,4 @@
-<nav id="home" class="sticky top-0 z-50 border-b border-parchment bg-white/95 backdrop-blur-sm">
+﻿<nav id="home" class="sticky top-0 z-50 border-b border-parchment bg-white/95 backdrop-blur-sm">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
 
         <!-- Logo -->
@@ -23,7 +23,7 @@
             <a href="#contact"      class="text-xs font-medium uppercase tracking-widest text-text-muted transition hover:text-green">Contact</a>
         </div>
 
-        <!-- Sign In + Get Started -->
+        <!-- Sign In + Get Started (desktop) -->
         <div class="hidden items-center gap-4 md:flex">
             <a href="#"
                class="text-xs font-semibold uppercase tracking-widest text-green transition hover:text-green-mid">
@@ -40,26 +40,36 @@
             type="button"
             id="mobile-menu-btn"
             aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
             class="flex h-9 w-9 items-center justify-center rounded-full border border-parchment text-green transition hover:bg-green-mist md:hidden"
         >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="4" x2="20" y1="6"  y2="6"/>
                 <line x1="4" x2="20" y1="12" y2="12"/>
                 <line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+            <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="hidden h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" x2="6" y1="6"  y2="18"/>
+                <line x1="6"  x2="18" y1="6" y2="18"/>
             </svg>
         </button>
 
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden border-t border-parchment bg-white md:hidden">
+    <div
+        id="mobile-menu"
+        class="overflow-hidden border-t border-parchment bg-white transition-all duration-300 ease-in-out md:hidden"
+        style="max-height: 0;"
+    >
         <div class="mx-auto max-w-7xl space-y-1 px-6 py-4">
-            <a href="#home"         class="block py-2 text-xs font-medium uppercase tracking-widest text-text-muted hover:text-green">Home</a>
-            <a href="#features"     class="block py-2 text-xs font-medium uppercase tracking-widest text-text-muted hover:text-green">Features</a>
-            <a href="#pricing"      class="block py-2 text-xs font-medium uppercase tracking-widest text-text-muted hover:text-green">Pricing</a>
-            <a href="#testimonials" class="block py-2 text-xs font-medium uppercase tracking-widest text-text-muted hover:text-green">Testimonials</a>
-            <a href="#contact"      class="block py-2 text-xs font-medium uppercase tracking-widest text-text-muted hover:text-green">Contact</a>
-            <div class="flex items-center gap-4 pt-3">
+            <a href="#home"         class="block py-2.5 text-xs font-medium uppercase tracking-widest text-text-muted hover:text-green">Home</a>
+            <a href="#features"     class="block py-2.5 text-xs font-medium uppercase tracking-widest text-text-muted hover:text-green">Features</a>
+            <a href="#pricing"      class="block py-2.5 text-xs font-medium uppercase tracking-widest text-text-muted hover:text-green">Pricing</a>
+            <a href="#testimonials" class="block py-2.5 text-xs font-medium uppercase tracking-widest text-text-muted hover:text-green">Testimonials</a>
+            <a href="#contact"      class="block py-2.5 text-xs font-medium uppercase tracking-widest text-text-muted hover:text-green">Contact</a>
+            <div class="mt-1 flex items-center gap-4 border-t border-parchment pt-4">
                 <a href="#" class="text-xs font-semibold uppercase tracking-widest text-green">Sign In</a>
                 <a href="#pricing" class="rounded-full bg-green px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white">
                     Get Started
@@ -70,7 +80,35 @@
 </nav>
 
 <script>
-    const btn  = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    (function () {
+        var btn       = document.getElementById('mobile-menu-btn');
+        var menu      = document.getElementById('mobile-menu');
+        var iconOpen  = document.getElementById('icon-open');
+        var iconClose = document.getElementById('icon-close');
+
+        function closeMenu() {
+            menu.style.maxHeight = '0';
+            btn.setAttribute('aria-expanded', 'false');
+            btn.setAttribute('aria-label', 'Open menu');
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+        }
+
+        btn.addEventListener('click', function () {
+            var isOpen = menu.style.maxHeight !== '0px' && menu.style.maxHeight !== '';
+            if (isOpen) {
+                closeMenu();
+            } else {
+                menu.style.maxHeight = menu.scrollHeight + 'px';
+                btn.setAttribute('aria-expanded', 'true');
+                btn.setAttribute('aria-label', 'Close menu');
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+            }
+        });
+
+        menu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', closeMenu);
+        });
+    })();
 </script>
