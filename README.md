@@ -356,7 +356,8 @@ week05-product-landing-page/
 │   ├── pricing-section.png
 │   ├── testimonials.png
 │   ├── footer.png
-│   ├── blade-components-folder.png
+│   ├── blade-components.png
+│   ├── vsproject-structure.png
 │   └── github-repository.png
 │
 ├── documentation/               # Before-and-after design comparison
@@ -425,7 +426,10 @@ Contains before-and-after design comparison images showing the evolution from th
 ![Footer](screenshots/footer.png)
 
 ### Blade Components Folder
-![Components Folder](screenshots/blade-components-folder.png)
+![Components Folder](screenshots/blade-components.png)
+
+### VS Code Project Structure
+![VS Code Project Structure](screenshots/vsproject-structure.png)
 
 ### GitHub Repository
 ![GitHub](screenshots/github-repository.png)
@@ -466,7 +470,7 @@ The final version is a fully designed, responsive, component-based landing page 
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/week05-product-landing-page.git
+git clone https://github.com/anchetanicole/week05-product-landing-page.git
 cd week05-product-landing-page
 
 # 2. Install PHP dependencies
@@ -492,7 +496,7 @@ Then open `http://localhost:8000` in your browser.
 
 ## Author
 
-**[Your Name]**
+Ancheta, Nicole Ashley T.
 ITST 302 – Client-Server Technologies
 Week 5 Laboratory Activity — Mini Project 04
 
