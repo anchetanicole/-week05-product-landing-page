@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* Typography */
+    --font-sans:    'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-serif:   'Playfair Display', ui-serif, Georgia, serif;
+    --font-display: 'Lato', ui-sans-serif, system-ui, sans-serif;
+
+    /* ── Starbucks Green Scale ── */
+    --color-green-mist:    #D4E9E2;   /* lightest tint */
+    --color-green-light:   #9DC4B6;   /* soft sage */
+    --color-green:         #1E3932;   /* Starbucks dark green (primary) */
+    --color-green-mid:     #2D6A4F;   /* mid green */
+    --color-green-bright:  #00A862;   /* Starbucks accent green */
+
+    /* ── Neutrals ── */
+    --color-white:         #FFFFFF;
+    --color-cream:         #F2F0EB;   /* warm off-white background */
+    --color-cream-dark:    #E8E4DC;   /* section alternating bg */
+    --color-parchment:     #CFC9BC;   /* borders, dividers */
+    --color-latte:         #CBA258;   /* gold accent (Starbucks Gold tier) */
+
+    /* ── Darks ── */
+    --color-espresso:      #1A1A1A;   /* near-black body text */
+    --color-charcoal:      #2C2C2C;   /* dark card bg */
+    --color-ink:           #000000;
+
+    /* ── Semantic aliases ── */
+    --color-background:    var(--color-cream);
+    --color-surface:       var(--color-white);
+    --color-border:        var(--color-parchment);
+    --color-text:          var(--color-espresso);
+    --color-text-muted:    #6B6B6B;
+    --color-accent:        var(--color-green-bright);
+    --color-primary:       var(--color-green);
+}
+
+/* ── Base ── */
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--color-cream);
+    color: var(--color-espresso);
+    font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1.2;
+}
