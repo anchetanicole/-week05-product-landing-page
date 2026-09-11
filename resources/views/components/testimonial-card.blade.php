@@ -5,7 +5,8 @@
     'review'   => 'Starbucks always delivers a consistently great experience.'
 ])
 
-<div class="flex flex-col rounded-2xl border border-parchment bg-white p-7 shadow-sm transition duration-300 hover:shadow-md">
+<div class="flex min-w-0 flex-col">
+    <div class="relative flex flex-1 flex-col rounded-3xl border border-parchment bg-white p-7 shadow-sm transition duration-300 hover:shadow-md">
 
     <!-- Opening quote mark -->
     <div class="mb-4">
@@ -28,14 +29,15 @@
         @endfor
     </div>
 
-    <!-- Divider -->
-    <div class="my-5 h-px bg-parchment"></div>
+        <!-- Speech bubble tail points toward the author -->
+        <span aria-hidden="true" class="absolute -bottom-2.5 left-8 h-5 w-5 rotate-45 border-b border-r border-parchment bg-white"></span>
+    </div>
 
     <!-- Author -->
-    <div class="flex items-center gap-3">
+    <div class="mt-7 flex items-center gap-3 rounded-2xl border border-parchment bg-white px-5 py-4 shadow-sm">
         <img src="{{ $image }}" alt="{{ $name }}"
-             class="h-11 w-11 rounded-full object-cover ring-2 ring-green-mist">
-        <div>
+             class="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-green-mist">
+        <div class="min-w-0">
             <p class="text-sm font-bold text-green">{{ $name }}</p>
             <p class="text-xs uppercase tracking-wider text-text-muted">{{ $position }}</p>
         </div>
